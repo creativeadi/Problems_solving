@@ -18,7 +18,9 @@ class GFG{
             
             Solution ob = new Solution();
             out.println(ob.inSequence(A, B, C));
-        }
+        
+out.println("~");
+}
         out.close();
     }
 }
@@ -30,19 +32,18 @@ class GFG{
 class Solution{
     static int inSequence(int A, int B, int C){
         // code here
-        if (C==0){
-            if (A==B){
+        if (C == 0){
+            if ( A == B ){
                 return 1;
             }
-            else{
+            else {
                 return 0;
             }
         }
-        int n=(B-A)/C + 1;
-        if (n>0 && B==A+(n-1)*C){
+        if ((B-A)/C >=0 && (B-A)%C == 0){
             return 1;
         }
-        else{
+        else {
             return 0;
         }
     }
